@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up </title>
+    <style>
+        .container {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            display: none; 
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        .inner-div {
+            text-align: center;
+            height: 150px;
+            width: 400px;
+            border: 2px solid black;
+            background-color: skyblue;
+        
+          
+        }
+
+        .btn {
+            cursor: pointer;
+            background-color:gray;
+        }
+    
+        @media (max-width: 600px) {
+            .inner-div h1 {
+                font-size: 18px; 
+            }
+            .inner-div p {
+                font-size: 14px; 
+            }
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-div">
+            <h1>This is a simple pop-up</h1>
+            <p>Lorem ipsum dolor sit.</p>
+            <button class="btn">CLOSE!</button>
+        </div>
+    </div>
+
+    <script>
+        let popup = document.querySelector(".container");
+        let innerDiv = document.querySelector(".inner-div");
+        let btn = document.querySelector(".btn");
+
+        window.onload = function () {
+            popup.style.display = "flex"; 
+            
+        };
+
+        btn.addEventListener('click', () => {            
+                popup.style.display = "none";            
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
